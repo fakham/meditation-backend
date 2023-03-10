@@ -1,8 +1,8 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
-const HOST = '192.168.100.236';
-const PORT = 3001;
+const HOST = process.env.HOST;
+const PORT = process.env.PORT;
 
 (async function bootstrap() {
   const app = await NestFactory.create(AppModule);

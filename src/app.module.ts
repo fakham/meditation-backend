@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MulterModule } from '@nestjs/platform-express';
@@ -7,6 +8,7 @@ import { TracksModule } from './tracks/tracks.module';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     MulterModule.register({
       dest: './files',
     }),
